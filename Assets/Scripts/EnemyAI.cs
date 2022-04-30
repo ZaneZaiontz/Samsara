@@ -16,9 +16,12 @@ public class EnemyAI : MonoBehaviour
     public float Distance;
 
 
+
     //attack stuff
     public float damage = 20f;
     public float range = 25f;
+
+ 
 
 
     private void Update()
@@ -38,6 +41,7 @@ public class EnemyAI : MonoBehaviour
         {
             agent.isStopped = false;
             agent.SetDestination(player.transform.position);
+
         }
         if (!isAngered)
         {
