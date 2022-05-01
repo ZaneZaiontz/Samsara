@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 0710321ba5cf749b5ae09ae93ce04b48
+  - enabled: 1
+    path: Assets/Scenes/Zanes Scene.unity
+    guid: 9bbd06306754069498ccabf682417542
+  - enabled: 1
+    path: Assets/Scenes/Marks Scene.unity
+    guid: 06c72c06418fd1c47a67b7f7ede54d04
   m_configObjects: {}
