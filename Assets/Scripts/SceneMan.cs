@@ -26,6 +26,6 @@ public class SceneMan : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("Level01");
+        SceneManager.LoadScene("Marks Scene");
     }
 }
