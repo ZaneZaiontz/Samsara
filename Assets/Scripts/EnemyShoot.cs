@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    Rigidbody rb;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    float speed = 500f;
+
+    [SerializeField]
+    float damage = 50f;
+
+    private bool collided;
+
+    private void Awake()
     {
-        
+        rb = GetComponent<Rigidbody>();
+        Transform target = GameObject.FindGameObjectWithTag("Player").transform;
+        Vector3 direction = target.position - transform.position;
+        rb.AddForce(direction * speed * Time.deltaTime);
+
+        Destroy(gameObject, 2);
     }
+    
 }
