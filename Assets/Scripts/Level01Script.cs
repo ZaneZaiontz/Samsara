@@ -25,7 +25,7 @@ public class Level01Script : MonoBehaviour
         if (co.gameObject.name=="PLAYER" && enemies.Length==0)
         {
             Debug.Log("HIT THE PORTAL");
-            SceneManager.LoadScene("Level02");
+            SceneManager.LoadScene("Zanes Scene");
         }
     }
 }
