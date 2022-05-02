@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 33328b30d3cb64b84a357e1ade66b175
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level01.unity
     guid: 9dab3b97e3f5d4fe9b525bb8d84fc7ec
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level02.unity
     guid: 211029817a7284537a69479d75b66762
   - enabled: 1
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Marks Scene.unity
     guid: 06c72c06418fd1c47a67b7f7ede54d04
+  - enabled: 1
+    path: Assets/Scenes/WIN.unity
+    guid: fb177759b98d14ac583f4d9d2c07d37c
   m_configObjects: {}

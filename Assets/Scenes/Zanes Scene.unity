@@ -4197,7 +4197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8633631489178916196, guid: 96e29f6efb2434ddaa47d6e659ce5435, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 62.00003
+      value: 63.73
       objectReference: {fileID: 0}
     - target: {fileID: 8633631489178916196, guid: 96e29f6efb2434ddaa47d6e659ce5435, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8179,15 +8179,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7250936161690895939, guid: 5f92048da03f0f346a37e792e27ae9d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0.000005677337
+      value: 0.0000058358037
       objectReference: {fileID: 0}
     - target: {fileID: 7250936161690895939, guid: 5f92048da03f0f346a37e792e27ae9d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 142.55989
+      value: -179.99998
       objectReference: {fileID: 0}
     - target: {fileID: 7250936161690895939, guid: 5f92048da03f0f346a37e792e27ae9d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -50.19017
+      value: 31.847923
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f92048da03f0f346a37e792e27ae9d3, type: 3}
@@ -85146,6 +85146,30 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1386471271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f92048da03f0f346a37e792e27ae9d3, type: 3}
+  m_PrefabInstance: {fileID: 168620930}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1386471273
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386471271}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 244adc87674e9134d87049442c686037, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!43 &1389594610
 Mesh:
   m_ObjectHideFlags: 0
@@ -107783,30 +107807,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &1983891803 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f92048da03f0f346a37e792e27ae9d3, type: 3}
-  m_PrefabInstance: {fileID: 168620930}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1983891804
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983891803}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 081460df15d48894e88ace97c9e16fca, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1984331092
 GameObject:
   m_ObjectHideFlags: 0

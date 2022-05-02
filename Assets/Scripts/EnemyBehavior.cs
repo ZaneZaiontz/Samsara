@@ -6,15 +6,10 @@ using UnityEngine.AI;
 public class EnemyBehavior : MonoBehaviour
 {
     public NavMeshAgent agent;
-
     public GameObject player;
-
     public float Distance;
-
     private Animator animator;
-
     public float lookRadius;
-
     public float attackRadius;
 
     // Start is called before the first frame update
@@ -51,6 +46,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private void follow()
     {
+        agent.isStopped = false;
         animator.SetBool("isShooting", false);
         animator.SetBool("isWalking", true);
         Vector3 destination = player.transform.position;
@@ -59,11 +55,12 @@ public class EnemyBehavior : MonoBehaviour
 
     private void attack()
     {
-        animator.SetBool("isShooting", true);
+        animator.SetBool("isShooting", true);        
     }
 
     void idle()
     {
+        agent.isStopped = true;
         animator.SetBool("isWalking", false);
         animator.SetBool("isShooting", false);
     }
