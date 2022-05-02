@@ -21,12 +21,13 @@ public class PlayerStats : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag=="Enemy")
+        if (collision.gameObject.tag=="EnemyBullet")
         {
             Debug.Log("I've been hit");
-            DeductHealth(5);
+            DeductHealth(50);
         }
     }
+
 
     public void DeductHealth(float damageAmount)
     {

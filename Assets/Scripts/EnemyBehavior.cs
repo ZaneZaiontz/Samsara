@@ -11,15 +11,27 @@ public class EnemyBehavior : MonoBehaviour
     private Animator animator;
     public float lookRadius;
     public float attackRadius;
+    private Transform target;
+    float fireRate = 6f;
+
+    [SerializeField]
+    GameObject projectile;
+
+    [SerializeField]
+    Transform shootPoint;
+
+    [SerializeField]
+    float turnSpeed = 5;
+
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
     }
-
 
     //attack stuff
     public float damage = 20f;
@@ -28,6 +40,11 @@ public class EnemyBehavior : MonoBehaviour
 
     private void Update()
     {
+        fireRate -= Time.deltaTime;
+
+        Vector3 direction = target.position - transform.position;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), turnSpeed * Time.deltaTime);
+
         Distance = Vector3.Distance(player.transform.position, this.transform.position);
 
         if (Distance <= lookRadius && Distance > attackRadius)
@@ -55,7 +72,13 @@ public class EnemyBehavior : MonoBehaviour
 
     private void attack()
     {
-        animator.SetBool("isShooting", true);        
+        agent.isStopped = false;
+        animator.SetBool("isShooting", true);   
+        if (fireRate <= 0)
+        {
+            fireRate = 1.45f;
+            Shoot();
+        }
     }
 
     void idle()
@@ -63,6 +86,11 @@ public class EnemyBehavior : MonoBehaviour
         agent.isStopped = true;
         animator.SetBool("isWalking", false);
         animator.SetBool("isShooting", false);
+    }
+
+    void Shoot()
+    {
+        Instantiate(projectile, shootPoint.position, shootPoint.rotation);
     }
 
 }
