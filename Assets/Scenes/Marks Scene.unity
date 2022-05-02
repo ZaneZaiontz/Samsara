@@ -23,10 +23,10 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 1.07
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: c50b2762b14654a63b9187951cbeb4cb, type: 2}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.25455245, g: 0.00027251808, b: 0.0003934128, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -349,7 +349,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1686,6 +1686,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2937ab6fbf9cf4f5c84cbcd029e723b9, type: 3}
+--- !u!1 &1179055232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5266727261149466088, guid: 42ed25b125414db4c91a789160401255, type: 3}
+  m_PrefabInstance: {fileID: 5266727262202655269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!45 &1179055234
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179055232}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: c50b2762b14654a63b9187951cbeb4cb, type: 2}
 --- !u!1001 &1330922173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2571,6 +2585,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2071720025}
     m_Modifications:
+    - target: {fileID: 5266727261149466100, guid: 42ed25b125414db4c91a789160401255, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5266727262115198346, guid: 42ed25b125414db4c91a789160401255, type: 3}
       propertyPath: m_RootOrder
       value: 0
