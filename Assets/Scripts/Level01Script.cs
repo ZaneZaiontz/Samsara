@@ -22,10 +22,10 @@ public class Level01Script : MonoBehaviour
 
     private void OnCollisionEnter(Collision co)
     {
-        if (co.gameObject.name=="PLAYER" && enemies.Length==0)
+        if (co.gameObject.name=="Character" && enemies.Length==0)
         {
             Debug.Log("HIT THE PORTAL");
-            SceneManager.LoadScene("Level02");
+            SceneManager.LoadScene("Zanes Scene");
         }
     }
 }
