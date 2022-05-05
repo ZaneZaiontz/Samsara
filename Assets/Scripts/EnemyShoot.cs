@@ -21,7 +21,7 @@ public class EnemyShoot : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         //Vector3 direction = target.position - transform.position;
         //rb.AddForce(direction * speed * Time.deltaTime); // , ForceMode.Impulse
-        rb.AddForce(transform.forward * 32f, ForceMode.Impulse); // , ForceMode.Impulse
+        rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
         Debug.Log($"WhereAmI {transform.forward}");
 
         Destroy(gameObject, 2);

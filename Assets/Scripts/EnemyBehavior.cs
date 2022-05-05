@@ -12,7 +12,7 @@ public class EnemyBehavior : MonoBehaviour
     public float lookRadius;
     public float attackRadius;
 
-    private Transform target;
+    //private Transform target;
     float fireRate = 6f;
 
     [SerializeField]
@@ -30,7 +30,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        //target = GameObject.FindGameObjectWithTag("Player").transform;
         
     }
 

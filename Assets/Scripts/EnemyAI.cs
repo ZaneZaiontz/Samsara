@@ -19,7 +19,7 @@ public class EnemyAI : MonoBehaviour
 
     //attack stuff
     public float damage = 20f;
-    public float range = 25f;
+    public float range = 500f;
 
  
 
