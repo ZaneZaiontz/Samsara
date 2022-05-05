@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyShoot : MonoBehaviour
 {
     Rigidbody rb;
+    public Transform target;
 
     [SerializeField]
     float speed = 500f;
@@ -17,9 +18,11 @@ public class EnemyShoot : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        Transform target = GameObject.FindGameObjectWithTag("Player").transform;
-        Vector3 direction = target.position - transform.position;
-        rb.AddForce(direction * speed * Time.deltaTime);
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        //Vector3 direction = target.position - transform.position;
+        //rb.AddForce(direction * speed * Time.deltaTime); // , ForceMode.Impulse
+        rb.AddForce(transform.forward * 32f, ForceMode.Impulse); // , ForceMode.Impulse
+        Debug.Log($"WhereAmI {transform.forward}");
 
         Destroy(gameObject, 2);
     }

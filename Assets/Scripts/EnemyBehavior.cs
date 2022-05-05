@@ -11,6 +11,7 @@ public class EnemyBehavior : MonoBehaviour
     private Animator animator;
     public float lookRadius;
     public float attackRadius;
+
     private Transform target;
     float fireRate = 6f;
 
@@ -30,7 +31,7 @@ public class EnemyBehavior : MonoBehaviour
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
-
+        
     }
 
     //attack stuff
@@ -42,17 +43,20 @@ public class EnemyBehavior : MonoBehaviour
     {
         fireRate -= Time.deltaTime;
 
-        Vector3 direction = target.position - transform.position;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), turnSpeed * Time.deltaTime);
-
+        //Vector3 direction = target.position - transform.position; 
+        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), turnSpeed * Time.deltaTime);
+        Vector3 lookPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
         Distance = Vector3.Distance(player.transform.position, this.transform.position);
-
+        
         if (Distance <= lookRadius && Distance > attackRadius)
         {
+            transform.LookAt(lookPos);
+            
             follow();
         }
         if (Distance <= lookRadius && Distance <= attackRadius)
         {
+            transform.LookAt(lookPos);
             attack();
         }
         if (Distance > lookRadius)
@@ -90,6 +94,7 @@ public class EnemyBehavior : MonoBehaviour
 
     void Shoot()
     {
+        Debug.Log($"Shoot position : {shootPoint.position}\nShoot rotation : {shootPoint.rotation}");
         Instantiate(projectile, shootPoint.position, shootPoint.rotation);
     }
 

@@ -81,12 +81,13 @@ public class Shooter : MonoBehaviour
     private IEnumerator RegenMana()
     {
         yield return new WaitForSeconds(2);
-
+        // Zane: I increased the regen speed 
         while (player.CurrentMana < player.MaxMana)
         {
-            player.CurrentMana += 1;
+            player.CurrentMana = (player.CurrentMana * 1.65f) + 1f;
             yield return regenTic;
         }
+        player.CurrentMana = 100f;
         regen = null;
     }
 
