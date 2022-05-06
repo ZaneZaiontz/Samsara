@@ -24,6 +24,6 @@ public class bossShoot : MonoBehaviour
         rb.AddForce(transform.forward * speed, ForceMode.Impulse);
         Debug.Log($"WhereAmI {transform.forward}");
 
-        Destroy(gameObject, 8);
+        Destroy(gameObject, 1);
     }
 }

@@ -70,10 +70,21 @@ public class Shooter : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 100))
         {
-            EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
-            if (enemy != null)
+            if (hit.transform.tag == "Enemy")
             {
-                enemy.DeductHealth(damage);
+                Debug.Log("Hit!");
+                 
+                if (hit.transform.GetComponent<EnemyHealth>() != null)
+                {
+                    EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
+                    enemy.DeductHealth(damage);
+                }
+                else if (hit.transform.GetComponent<BossHealth>() != null)
+                {
+                    BossHealth boss = hit.transform.GetComponent<BossHealth>();
+                    boss.DeductHealth(damage);
+                }
+                
             }
         }
     }
