@@ -16,7 +16,7 @@ public class Shooter : MonoBehaviour
     public float fireRate = 4;
     public PlayerStats player;
     private Coroutine regen;
-    float damage = 25f;
+    public float damage = 25f;
     private WaitForSeconds regenTic = new WaitForSeconds(.2f);
 
 
@@ -72,7 +72,7 @@ public class Shooter : MonoBehaviour
         {
             if (hit.transform.tag == "Enemy")
             {
-                Debug.Log("Hit!");
+                //Debug.Log("Hit!");
                  
                 if (hit.transform.GetComponent<EnemyHealth>() != null)
                 {

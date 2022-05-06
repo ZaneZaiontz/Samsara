@@ -94,7 +94,7 @@ public class EnemyBehavior : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log($"Shoot position : {shootPoint.position}\nShoot rotation : {shootPoint.rotation}");
+        //Debug.Log($"Shoot position : {shootPoint.position}\nShoot rotation : {shootPoint.rotation}");
         Instantiate(projectile, shootPoint.position, shootPoint.rotation);
     }
 

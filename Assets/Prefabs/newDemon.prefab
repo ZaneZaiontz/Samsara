@@ -84,7 +84,7 @@ NavMeshAgent:
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 10
-  m_StoppingDistance: 20
+  m_StoppingDistance: 40
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
@@ -156,13 +156,13 @@ MonoBehaviour:
   agent: {fileID: 652025723685899341}
   player: {fileID: 0}
   Distance: 0
-  lookRadius: 35
-  attackRadius: 25
+  lookRadius: 130
+  attackRadius: 65
   projectile: {fileID: 6083596990283615298, guid: 1ce529f12cc3db54998cabf2e41e26d2, type: 3}
   shootPoint: {fileID: 652025723621710412}
   turnSpeed: 5
   damage: 20
-  range: 25
+  range: 65
 --- !u!114 &652025723685899343
 MonoBehaviour:
   m_ObjectHideFlags: 0

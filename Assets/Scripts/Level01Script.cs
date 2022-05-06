@@ -16,7 +16,7 @@ public class Level01Script : MonoBehaviour
 
     private void OnTriggerEnter(Collider co)
     {
-        Debug.Log("HIT THE PORTAL");
+        //Debug.Log("HIT THE PORTAL");
         //SceneManager.LoadScene("Zanes Scene");
         if (co.gameObject.tag == "Player" && enemies.Length == 0)
         {

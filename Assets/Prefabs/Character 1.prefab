@@ -313,9 +313,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 5266727262115198357}
-  speed: 26
+  baseSpeed: 24
   gravity: -19.62
   jumpHeight: 6
+  sprintMultiplier: 1.65
   groundCheck: {fileID: 5266727261911966777}
   groundDistance: 0.75
   groundMask:
@@ -336,9 +337,10 @@ MonoBehaviour:
   cam: {fileID: 5266727261149466100}
   projectile: {fileID: 5485872707469224710, guid: 484a3225928b21b439b72381d6f670a4, type: 3}
   firePoint: {fileID: 5266727261411018001}
-  projectileSpeed: 30
-  fireRate: 3
+  projectileSpeed: 100
+  fireRate: 4
   player: {fileID: 5266727262115198353}
+  damage: 55
 --- !u!114 &5266727262115198358
 MonoBehaviour:
   m_ObjectHideFlags: 0

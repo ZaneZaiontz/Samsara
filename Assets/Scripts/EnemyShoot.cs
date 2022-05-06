@@ -8,7 +8,7 @@ public class EnemyShoot : MonoBehaviour
     public Transform target;
 
     [SerializeField]
-    float speed = 500f;
+    float speed = 32f;
 
     [SerializeField]
     float damage = 50f;
@@ -21,8 +21,8 @@ public class EnemyShoot : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         //Vector3 direction = target.position - transform.position;
         //rb.AddForce(direction * speed * Time.deltaTime); // , ForceMode.Impulse
-        rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-        Debug.Log($"WhereAmI {transform.forward}");
+        rb.AddForce(transform.forward * speed, ForceMode.Impulse);
+        //Debug.Log($"WhereAmI {transform.forward}");
 
         Destroy(gameObject, 2);
     }
