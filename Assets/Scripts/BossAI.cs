@@ -18,6 +18,8 @@ public class BossAI : MonoBehaviour
     private Transform target;
     float fireRate = 6f;
 
+    private bool sideFire = false;
+
     [SerializeField]
     GameObject projectile;
 
@@ -30,8 +32,8 @@ public class BossAI : MonoBehaviour
     float turnSpeed = 15;
 
     //attack stuff
-    public float damage = 25f;
-    public float range = 50f;
+    //public float damage = 25f;
+    //public float range = 50f;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +51,7 @@ public class BossAI : MonoBehaviour
 
         //Vector3 direction = target.position - transform.position; 
         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), turnSpeed * Time.deltaTime);
-        Vector3 lookPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Vector3 lookPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
         Distance = Vector3.Distance(player.transform.position, this.transform.position);
 
         if (Distance <= lookRadius && Distance > attackRadius)
@@ -62,7 +64,7 @@ public class BossAI : MonoBehaviour
         {
             Debug.Log($"Boss looking at : {lookPos}");
             transform.LookAt(lookPos);
-            //attack();
+            attack();
         }
         if (Distance > lookRadius)
         {
@@ -99,8 +101,18 @@ public class BossAI : MonoBehaviour
 
     void Shoot()
     {
+        if (sideFire)
+        {
+            Instantiate(projectile, lightAttack.position, lightAttack.rotation);
+            sideFire = false;
+        }
+        else
+        {
+            Instantiate(projectile, darkAttack.position, darkAttack.rotation);
+            sideFire = true;
+        }
         //Debug.Log($"Shoot position : {shootPoint.position}\nShoot rotation : {shootPoint.rotation}");
-        //Instantiate(projectile, shootPoint.position, shootPoint.rotation);
+        
     }
 
 }
