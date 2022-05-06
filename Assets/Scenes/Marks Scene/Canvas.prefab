@@ -456,6 +456,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2648454675461458452}
     m_Modifications:
+    - target: {fileID: 1350759268993749589, guid: 1e0f8a1ea037c4a9693d77d07fe33183, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208019178445349197, guid: 1e0f8a1ea037c4a9693d77d07fe33183, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061371333877728495, guid: 1e0f8a1ea037c4a9693d77d07fe33183, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5703181690520826986, guid: 1e0f8a1ea037c4a9693d77d07fe33183, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -6,6 +6,7 @@ using TMPro;
 public class ObjectiveStatus : MonoBehaviour
 {
     public TextMeshProUGUI numerator;
+    public TextMeshProUGUI leaveScreen;
     int totalEnemies;
     GameObject[] enemies;
 
@@ -17,7 +18,7 @@ public class ObjectiveStatus : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         totalEnemies = enemies.Length;
         numerator.text = totalEnemies.ToString() + " / " + totalEnemies.ToString();
-
+        leaveScreen.enabled = false;
     }
 
     // Update is called once per frame
@@ -25,5 +26,9 @@ public class ObjectiveStatus : MonoBehaviour
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         numerator.text = (totalEnemies-enemies.Length).ToString() + " / " + totalEnemies.ToString();
+        if (enemies.Length == 0)
+        {
+            leaveScreen.enabled = true;
+        }
     }
 }
