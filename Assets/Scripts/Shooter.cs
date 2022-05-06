@@ -70,10 +70,21 @@ public class Shooter : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 100))
         {
-            EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
-            if (enemy != null)
+            if (hit.transform.tag == "Enemy")
             {
-                enemy.DeductHealth(damage);
+                Debug.Log("Hit!");
+                 
+                if (hit.transform.GetComponent<EnemyHealth>() != null)
+                {
+                    EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
+                    enemy.DeductHealth(damage);
+                }
+                else if (hit.transform.GetComponent<BossHealth>() != null)
+                {
+                    BossHealth boss = hit.transform.GetComponent<BossHealth>();
+                    boss.DeductHealth(damage);
+                }
+                
             }
         }
     }
@@ -81,12 +92,13 @@ public class Shooter : MonoBehaviour
     private IEnumerator RegenMana()
     {
         yield return new WaitForSeconds(2);
-
+        // Zane: I increased the regen speed 
         while (player.CurrentMana < player.MaxMana)
         {
-            player.CurrentMana += 1;
+            player.CurrentMana = (player.CurrentMana * 1.65f) + 1f;
             yield return regenTic;
         }
+        player.CurrentMana = 100f;
         regen = null;
     }
 

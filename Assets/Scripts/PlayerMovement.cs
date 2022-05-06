@@ -7,9 +7,11 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController characterController;
 
-    public float speed = 12f;
+    public float baseSpeed = 24f;
+    private float speed;
     public float gravity = -9.81f;
     public float jumpHeight = 4f;
+    public float sprintMultiplier = 1.65f;
 
     Vector3 velocity;
     bool isGrounded;
@@ -17,6 +19,11 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+
+    private void Start()
+    {
+        speed = baseSpeed;
+    }
 
     // Update is called once per frame
     void Update()
@@ -35,6 +42,16 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * xMove + transform.forward * zMove;
 
         characterController.Move(move * speed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = sprintMultiplier * baseSpeed;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            //speed = 24f;
+            speed = baseSpeed;
+        }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {

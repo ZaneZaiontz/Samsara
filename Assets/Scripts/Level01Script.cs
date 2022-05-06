@@ -8,24 +8,19 @@ public class Level01Script : MonoBehaviour
 
     GameObject[] enemies;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
-    private void OnCollisionEnter(Collision co)
+    private void OnTriggerEnter(Collider co)
     {
-        if (co.gameObject.name=="Character" && enemies.Length==0)
+        Debug.Log("HIT THE PORTAL");
+        //SceneManager.LoadScene("Zanes Scene");
+        if (co.gameObject.tag == "Player" && enemies.Length == 0)
         {
-            Debug.Log("HIT THE PORTAL");
-            SceneManager.LoadScene("Zanes Scene");
+            SceneManager.LoadScene(2);
         }
     }
 }
