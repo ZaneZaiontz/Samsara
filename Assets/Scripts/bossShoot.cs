@@ -22,7 +22,7 @@ public class bossShoot : MonoBehaviour
         //Vector3 direction = target.position - transform.position;
         //rb.AddForce(direction * speed * Time.deltaTime); // , ForceMode.Impulse
         rb.AddForce(transform.forward * speed, ForceMode.Impulse);
-        Debug.Log($"WhereAmI {transform.forward}");
+        //Debug.Log($"WhereAmI {transform.forward}");
 
         Destroy(gameObject, 1);
     }

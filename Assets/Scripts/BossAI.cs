@@ -41,7 +41,7 @@ public class BossAI : MonoBehaviour
         //animator = GetComponent<Animator>();
         boss = GetComponent<NavMeshAgent>();
         //playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
-        Debug.Log(player);
+        //Debug.Log(player);
 
     }
 
@@ -56,7 +56,7 @@ public class BossAI : MonoBehaviour
 
         if (Distance <= lookRadius && Distance > attackRadius)
         {
-            Debug.Log($"Boss looking at : {lookPos}");
+            //Debug.Log($"Boss looking at : {lookPos}");
             transform.LookAt(lookPos);
             //follow();
         }

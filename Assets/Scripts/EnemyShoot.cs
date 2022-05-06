@@ -10,8 +10,8 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField]
     float speed = 32f;
 
-    [SerializeField]
-    float damage = 50f;
+    //[SerializeField]
+    //float damage = 50f;
 
     private bool collided;
 
